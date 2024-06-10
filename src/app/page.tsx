@@ -9,6 +9,18 @@ type ContactData = {
 
 const contactData: ContactData[] = [
   {
+    id: 1,
+    subtitle: "Phone",
+    title: "+371 29509420",
+    url: "tel:+37129509420",
+  },
+  {
+    id: 2,
+    subtitle: "WhatsApp",
+    title: "+371 29509420",
+    url: "https://wa.me/0037129509420",
+  },
+  {
     id: 3,
     subtitle: "LinkedIn",
     title: "Andrejs Rinkevičs",
@@ -17,18 +29,22 @@ const contactData: ContactData[] = [
 ];
 
 const prepositionData = [
-  {
-    id: 3,
-    title: "Hire me or a team for Startup Growth",
-  },
+  // {
+  //   id: 3,
+  //   title: "Hire me or a team for Startup Growth",
+  // },
   {
     id: 1,
-    title: "Startup Scale-Up / Team Setup Consultation",
+    title: "Technical Advisor consultation",
   },
   {
     id: 2,
-    title: "Help with System Architecture",
+    title: "Solution development",
   },
+  {
+    id: 3,
+    title: "Pitch an idea",
+  }
 ];
 
 const linkedInMessageURL = "https://www.linkedin.com/in/andrejsrinkevics/";
@@ -41,17 +57,22 @@ export default function Page() {
           <span className="mb-4 mt-4 text-sm font-light md:my-0">
             Digital Business Card
           </span>
-          <FacePhoto className="" />
+          <FacePhoto className=""/>
         </div>
         <h1 className="mt-4  text-3xl font-bold text-black/70">
           Andrejs Rinkevičs
         </h1>
         <h2 className="mt-2  font-light text-black/60">
-          System Architect, Senior Software Engineer
+          VP of Software at Giraffe360 - Real Estate 3D and Photography
+        </h2>
+        <h2 className="mt-2  font-light text-black/60">
+          CTO at Qrunch - Software for Hotels and Restaurants
+        </h2>
+        <h2 className="mt-2  font-light text-black/60">
+          Founding Partner at Pace - Startup Incubator
         </h2>
         <p className=" mt-2  text-sm text-black/70">
-          Startups, Cloud System Architecture, Agile, Scale-Up, Outsource,
-          Consulting.
+          Startups, Solution Architecture, Consulting, Advisor
         </p>
         <nav className="mt-4 flex w-full flex-col justify-between  md:flex-row">
           <ul className="mt-4 flex flex-col gap-1 text-black/60">
@@ -59,14 +80,14 @@ export default function Page() {
               Contacts
             </h1>
             {contactData.map((item) => (
-              <li className="" key={item.id}>
-                <h2 className="text-sm font-light text-black/40">
-                  {item.subtitle}
-                </h2>
-                <a className="font-normal hover:underline" href={item.url}>
-                  {item.title}
-                </a>
-              </li>
+                <li className="" key={item.id}>
+                  <h2 className="text-sm font-light text-black/40">
+                    {item.subtitle}
+                  </h2>
+                  <a className="font-normal hover:underline" href={item.url}>
+                    {item.title}
+                  </a>
+                </li>
             ))}
           </ul>
           <ul className="mt-4 flex flex-col gap-1">
@@ -74,12 +95,12 @@ export default function Page() {
               <a href={linkedInMessageURL}>Send me a message</a>
             </h1>
             {prepositionData.map((item) => (
-              <li
-                className="flex flex-row font-normal text-black/60"
-                key={item.id}
-              >
-                {item.title}
-              </li>
+                <li
+                    className="flex flex-row font-normal text-black/60"
+                    key={item.id}
+                >
+                  {item.title}
+                </li>
             ))}
           </ul>
         </nav>
