@@ -10,7 +10,7 @@ const font = Noto_Sans({
 export const metadata = {
   title: "Andrejs Rinkevičs - Digital Business Card",
   description:
-    "Contract and get help with your Startup technology growth. Contact me for more information.",
+    "Contract and get help with your Startup. Contact me for more information.",
 };
 
 export default function RootLayout({

@@ -2,7 +2,6 @@ import FacePhoto from "@/components/FacePhoto";
 
 type ContactData = {
   id: number;
-  subtitle: string;
   title: string;
   url: string;
 };
@@ -10,101 +9,99 @@ type ContactData = {
 const contactData: ContactData[] = [
   {
     id: 1,
-    subtitle: "Phone",
     title: "+371 29509420",
     url: "tel:+37129509420",
   },
   {
     id: 2,
-    subtitle: "WhatsApp",
-    title: "+371 29509420",
-    url: "https://wa.me/0037129509420",
+    title: "Telegram",
+    url: "https://t.me/rinkevich",
   },
   {
     id: 3,
-    subtitle: "LinkedIn",
-    title: "Andrejs Rinkevičs",
+    title: "LinkedIn",
     url: "https://www.linkedin.com/in/andrejsrinkevics/",
-  }
-];
-
-const prepositionData = [
-  // {
-  //   id: 3,
-  //   title: "Hire me or a team for Startup Growth",
-  // },
-  {
-    id: 1,
-    title: "Technical Advisor consultation",
   },
   {
-    id: 2,
-    title: "Solution development",
-  },
-  {
-    id: 3,
-    title: "Pitch an idea",
+    id: 4,
+    title: "Instagram",
+    url: "https://www.instagram.com/rinkevich/",
   }
 ];
-
-const linkedInMessageURL = "https://www.linkedin.com/in/andrejsrinkevics/";
 
 export default function Page() {
   return (
-    <main className="relative isolate mx-6 my-10 max-w-3xl bg-primary lg:mx-auto">
-      <div className="flex h-full w-full flex-col rounded-primary bg-primary px-8 py-10 shadow-primary">
-        <div className="flex flex-col justify-between md:flex-row-reverse">
-          <span className="mb-4 mt-4 text-sm font-light md:my-0">
-            Digital Business Card
+      <main className="relative isolate mx-6 my-10 max-w-[768px] bg-primary md:mx-auto">
+        <div className="flex h-full w-full flex-col rounded-primary bg-primary px-8 py-10 shadow-primary">
+        <span className="mb-4 mt-4 text-sm font-light md:my-0 md:hidden">
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+               className="inline mr-2 motion-safe:animate-pulse opacity-100">
+            <circle cx="6" cy="6" r="6" fill="#80F79A"/>
+          </svg>
+          Riga - London - San Francisco
+        </span>
+          <div className="flex flex-row justify-between">
+            <FacePhoto className=""/>
+            <div className="flex-1 px-10 hidden md:block">
+              <h1 className="text-3xl font-bold text-black/70">
+                Andrejs Rinkevičs
+              </h1>
+              <ul className="w-full flex-col gap-1 text-black/60 mt-4 hidden md:flex">
+                {contactData.map((item) => (
+                    <li className="" key={item.id}>
+                      <a className="font-normal hover:font-bold underline underline-offset-4" href={item.url}>
+                        <span className="animate-bounce direction-alternate-reverse">→&nbsp;&nbsp;</span>
+                        {item.title}
+                      </a>
+                    </li>
+                ))}
+              </ul>
+            </div>
+            <span className="mb-4 mt-4 text-sm font-light md:my-0 hidden md:block">
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 className="inline mr-2 motion-safe:animate-pulse">
+              <circle cx="6" cy="6" r="6" fill="#80F79A"/>
+            </svg>
+            Riga - London - San Francisco
           </span>
-          <FacePhoto className=""/>
+          </div>
+          <div className="block md:hidden mt-4">
+            <h1 className="text-3xl font-bold text-black/70">
+              Andrejs Rinkevičs
+            </h1>
+            <ul className="flex w-full flex-col gap-1 text-black/60 mt-4">
+              {contactData.map((item) => (
+                  <li className="" key={item.id}>
+                    <a className="font-normal hover:font-bold underline" href={item.url}>
+                      → {item.title}
+                    </a>
+                  </li>
+              ))}
+            </ul>
+          </div>
+          <ul className="flex flex-col gap-4 font-light text-black/60 mt-4">
+            <li>
+              <h1 className="font-bold">VP of Software at <a className="underline" href="https://www.giraffe360.com/">Giraffe360</a></h1>
+              <h2>*real estate 3D and photography taken on a unique camera that delivers content within 24 hours.</h2>
+            </li>
+            <li>
+              <h1 className="font-bold">CTO at <a className="underline" href="https://www.qrunch.eu/">Qrunch</a></h1>
+              <h2>*empowering hotels and restaurants with edge-technology.</h2>
+            </li>
+            <li>
+              <h1 className="font-bold">Co-Founder of startup-pace</h1>
+              <h2>*startup house disrupting the venture market by creating a new breed of founders.</h2>
+            </li>
+            <li>
+              <h1 className="font-bold">Founder of <a className="underline" href="https://www.edgehug.com/">EdgeHug</a></h1>
+              <h2>*AI models available at the fraction of the cost in the cloud. security-first. developer-friendly.</h2>
+            </li>
+            <li>
+              <h1 className="font-bold">Co-Founder of Leonard AI</h1>
+              <h2>*easy legal document preparation for German government institutions.</h2>
+            </li>
+          </ul>
         </div>
-        <h1 className="mt-4  text-3xl font-bold text-black/70">
-          Andrejs Rinkevičs
-        </h1>
-        <h2 className="mt-2  font-light text-black/60">
-          VP of Software at Giraffe360 - Real Estate 3D and Photography
-        </h2>
-        <h2 className="mt-2  font-light text-black/60">
-          CTO at Qrunch - Software for Hotels and Restaurants
-        </h2>
-        <h2 className="mt-2  font-light text-black/60">
-          Founding Partner at Pace - Startup Incubator
-        </h2>
-        <p className=" mt-2  text-sm text-black/70">
-          Startups, Solution Architecture, Consulting, Advisor
-        </p>
-        <nav className="mt-4 flex w-full flex-col justify-between  md:flex-row">
-          <ul className="mt-4 flex flex-col gap-1 text-black/60">
-            <h1 className="text-xl font-bold text-black/80 md:my-1">
-              Contacts
-            </h1>
-            {contactData.map((item) => (
-                <li className="" key={item.id}>
-                  <h2 className="text-sm font-light text-black/40">
-                    {item.subtitle}
-                  </h2>
-                  <a className="font-normal hover:underline" href={item.url}>
-                    {item.title}
-                  </a>
-                </li>
-            ))}
-          </ul>
-          <ul className="mt-4 flex flex-col gap-1">
-            <h1 className="text-xl font-bold text-black/80 hover:underline">
-              <a href={linkedInMessageURL}>Send me a message</a>
-            </h1>
-            {prepositionData.map((item) => (
-                <li
-                    className="flex flex-row font-normal text-black/60"
-                    key={item.id}
-                >
-                  {item.title}
-                </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </main>
+      </main>
   );
 }
