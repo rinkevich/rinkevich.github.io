@@ -25,6 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
@@ -36,3 +37,8 @@ next-env.d.ts
 
 # IDE
 .idea/
+
+# Claude / local tooling
+.claude/
+.mcp.json
+skills-lock.json
